@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 typedef struct Etudiant {
     int idKairos;
     char nom[50];
