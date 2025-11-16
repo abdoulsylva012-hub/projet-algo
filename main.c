@@ -10,7 +10,7 @@ typedef struct Etudiant {
     struct Etudiant* suivant;
 } Etudiant;
 
-Etudiant* creerEtudiant(int id, char* nom, char* prenom, float moyenne) {
+Etudiant* Etudiant(int id, char* nom, char* prenom, float moyenne) {
     Etudiant* nouveau = (Etudiant*)malloc(sizeof(Etudiant));
     if (nouveau == NULL) {
         printf("Erreur d'allocation memoire!\n");
@@ -27,7 +27,7 @@ Etudiant* creerEtudiant(int id, char* nom, char* prenom, float moyenne) {
 }
 
 void ajouterEnTete(Etudiant** tete, int id, char* nom, char* prenom, float moyenne) {
-    Etudiant* nouveau = creerEtudiant(id, nom, prenom, moyenne);
+    Etudiant* nouveau = Etudiant(id, nom, prenom, moyenne);
     if (nouveau != NULL) {
         nouveau->suivant = *tete;
         *tete = nouveau;
@@ -47,7 +47,7 @@ void ajouterApres(Etudiant* tete, int idRecherche, int id, char* nom, char* pren
         return;
     }
 
-    Etudiant* nouveau = creerEtudiant(id, nom, prenom, moyenne);
+    Etudiant* nouveau = Etudiant(id, nom, prenom, moyenne);
     if (nouveau != NULL) {
         nouveau->suivant = courant->suivant;
         courant->suivant = nouveau;
